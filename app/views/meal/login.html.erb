@@ -1,0 +1,16 @@
+<center>
+<img src="/bagit.png" alt="BagIt Logo" />
+<br><br>  Welcome to BagIt, a quick and easy way to order bagged meals on the go. Just login, select, and submit.<br><br></center>
+	
+<div data-role="fieldcontain">
+
+<%= form_tag("/meal/submit", :method => "post", :id => "login") do %>
+<%= label_tag(:test_huid, "HUID:") %>
+<%= telephone_field_tag(:test_huid) %><br /><br />
+<%= label_tag(:test_password, "Password:") %>
+<%= password_field_tag(:test_password) %>
+<%= submit_tag("Login") %>
+
+<% end %>
+</div>
+

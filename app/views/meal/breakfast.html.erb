@@ -1,0 +1,39 @@
+<script type="text/javascript">
+$(document).ready(function() {
+  $(":checkbox").click(countChecked);
+   $("#main").submit(check);
+   })
+</script>
+
+
+
+<div data-role="controlgroup" data-type="horizontal" class="localnav">
+		<a href="#" data-role="button" class="ui-btn-active">Breakfast</a>
+		<a href="/meal/lunch" data-role="button" rel="external">Lunch</a>
+		<a href="/meal/dinner" data-role="button" rel="external">Dinner</a>
+    </div>
+
+
+      <div data-role="fieldcontain">
+  <%= form_tag("confirm", :method => "post", :id => "main", :onSubmit => "false") do %>
+<br>
+<br>
+  <label for="date" class="select">Pickup Date:</label>
+<%= select_tag(:date, options_for_select(@my_date)) %>
+  <label for="location" class="select">Pickup Location:</label>
+ <%= select_tag(:location, options_for_select(@locations, 99)) %>
+  <label for="time" class="select">Pickup Time:</label>
+ <%= select_tag(:time, options_for_select(@pickuptimes)) %>
+<br />
+<div id = "checkboxes">
+  <fieldset data-role="controlgroup">
+    <legend>Choose up to 5 items:</legend>
+<% @breakfasts.each do |item|  %>
+<%= check_box_tag(item[1], item[1]) %>
+<%= label_tag(item[1], item[0]) %>
+<% end %></fieldset>
+</div>
+<br /><br />
+<%= submit_tag("Submit") %><br />
+<% end %>
+</div>

@@ -1,0 +1,175 @@
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+   $("#lunch").submit(checklunch);
+   })
+</script>
+
+<div data-role="controlgroup" data-type="horizontal" class="localnav">
+		<a href="/meal/breakfast" data-role="button" data-direction="reverse" rel="external">Breakfast</a>
+		<a href="#" data-role="button" class="ui-btn-active">Lunch</a>
+		<a href="/meal/dinner" data-role="button" rel="external">Dinner</a>
+    </div>
+
+
+
+      <div data-role="fieldcontain">
+  <%= form_tag("confirmlunch", :method => "post", :id => "lunch") do %>
+<br>
+<br>
+  <label for="date" class="select">Pickup Date:</label>
+<%= select_tag(:date, options_for_select(@my_date)) %>
+  <label for="location" class="select">Pickup Location:</label>
+ <%= select_tag(:location, options_for_select(@locations, 99)) %>
+  <label for="time" class="select">Pickup Time:</label>
+ <%= select_tag(:time, options_for_select(@pickuptimes)) %>
+<br />
+<div data-role="fieldcontain">
+   <label for="entree1" class="select">Entree 1:</label>
+   <select name="entree1" id="entree1">
+      <option value="none">Choose an Entree</option>
+      <option value="Chef%27s%2BSalad">Chef's Salad</option>
+      <option value="Turkey">Turkey</option>
+      <option value="Chicken%2BSalad">Chicken Salad</option>
+      <option value="Ham">Ham</option>
+      <option value="Tuna%2BSalad">Tuna Salad</option>
+      <option value="Egg%2BSalad">Egg Salad</option>
+      <option value="Tabouleh%2B%26%2BChickpea%2BPita">Tabouleh & Chickpea Pita</option>
+      <option value="PB%26J">PB&J</option>
+      <option value="Gluten-Free%2BSandwich">Gluten-Free Sandwich</option>
+      <option value="3-Cheese">3-Cheese</option>
+      <option value="Plain%2BBagel%2B%26%2BCream%2BCheese">Plain Bagel & Cream Cheese</option>
+      <option value="Wheat%2BBagel%2B%26%2BCream%2BCheese">Wheat Bagel & Cream Cheese</option>
+      <option value="Side%2BSalad">Side Salad</option>
+      <option value="Gluten-Free%2BSalad">Gluten-Free Salad</option>
+
+    </select>
+    
+
+
+    <div id ="dressing1">
+    <select name='dressing1' id='dressing1'>
+            <option value="none">Dressing</option>
+            <option value='Ranch'>Ranch</option>
+            <option value='Blue%2BCheese'>Blue Cheese</option>
+            <option value='Light%2BItalian'>Light Italian</option>
+          </select>
+  </div>
+    <div id ="bread1">
+          <select name='bread1' id='bread1'>
+            <option value="none">Bread</option>
+            <option value='White%2BBread'>White Bread</option>
+            <option value='Whole%2BWheat'>Whole Wheat</option>
+            <option value='Marble%2BRye'>Marble Rye</option>
+            </select>
+    </div>
+      <div id = "cheese1">
+      <select name='cheese1' id='cheese1'>
+            <option value="none">Cheese</option>
+            <option value='No'>No Cheese</option>
+            <option value='American'>American</option>
+            <option value='Cheddar'>Cheddar</option>
+            <option value='Swiss'>Swiss</option>
+            </select>
+          </div>
+
+
+   <label for="entree2" class="select">Entree 2 (Optional):</label>
+   <select name="entree2" id="entree2">
+      <option value="none">Choose an Entree</option>
+      <option value="Chef%27s%2BSalad">Chef's Salad</option>
+      <option value="Turkey">Turkey</option>
+      <option value="Chicken%2BSalad">Chicken Salad</option>
+      <option value="Ham">Ham</option>
+      <option value="Tuna%2BSalad">Tuna Salad</option>
+      <option value="Egg%2BSalad">Egg Salad</option>
+      <option value="Tabouleh%2B%26%2BChickpea%2BPita">Tabouleh & Chickpea Pita</option>
+      <option value="PB%26J">PB&J</option>
+      <option value="Gluten-Free%2BSandwich">Gluten-Free Sandwich</option>
+      <option value="3-Cheese">3-Cheese</option>
+      <option value="Plain%2BBagel%2B%26%2BCream%2BCheese">Plain Bagel & Cream Cheese</option>
+      <option value="Wheat%2BBagel%2B%26%2BCream%2BCheese">Wheat Bagel & Cream Cheese</option>
+      <option value="Side%2BSalad">Side Salad</option>
+      <option value="Gluten-Free%2BSalad">Gluten-Free Salad</option>
+
+    </select>
+    
+
+
+    <div id ="dressing2">
+    <select name='dressing2' id='dressing2'>
+            <option value="none">Dressing</option>
+            <option value='Ranch'>Ranch</option>
+            <option value='Blue%2BCheese'>Blue Cheese</option>
+            <option value='Light%2BItalian'>Light Italian</option>
+          </select>
+  </div>
+    <div id ="bread2">
+          <select name='bread2' id='bread2'>
+            <option value="none">Bread</option>
+            <option value='White%2BBread'>White Bread</option>
+            <option value='Whole%2BWheat'>Whole Wheat</option>
+            <option value='Marble%2BRye'>Marble Rye</option>
+            </select>
+    </div>
+      <div id = "cheese2">
+      <select name='cheese2' id='cheese2'>
+            <option value="none">Cheese</option>
+            <option value='No'>No Cheese</option>
+            <option value='American'>American</option>
+            <option value='Cheddar'>Cheddar</option>
+            <option value='Swiss'>Swiss</option>
+            </select>
+          </div>
+           
+             <label for="drink" class="select">Beverage (Optional):</label>
+   <select name="drink" id="drink">
+      <option value="none">Select a Beverage</option>
+      <option value="Orange%2BJuice">Oranage Juice</option>
+      <option value="Skim%2BMilk">Skim Milk</option>
+      <option value="Whole%2BMilk">Whole Milk</option>
+      <option value="Chocolate%2BMilk">Chocolate Milk</option>
+      <option value="Coke">Coke</option>
+      <option value="Diet%2BCoke">Diet Coke</option>
+      <option value="Sprite">Sprite</option>
+      <option value="Diet%2BSprite">Diet Sprite</option>
+      <option value="Water">Water</option>
+
+    </select>
+
+
+    <label for="fruit" class="select">Fruit (Optional):</label>
+   <select name="fruit" id="fruit">
+     <option value="none">Select a Fruit</option>
+      <option value="Apple">Apple</option>
+      <option value="Banana">Banana</option>
+      <option value="Orange">Orange</option>
+    </select>
+
+    <label for="snack1" class="select">Snack 1 (Optional):</label>
+    <select name="snack1" id="snack1">
+      <option value="none">Select a snack</option>
+     <option value="Potato%2BChips">Potato Chips</option>
+     <option value="Cookie">Cookie</option>
+     <option value="Yogurt">Yogurt</option>
+     <option value="Carrots">Carrots</option>
+     <option value="Pretzels">Pretzels</option>
+   </select>
+
+
+    <label for="snack2" class="select">Snack 2 (Optional):</label>
+    <select name="snack2" id="snack2">
+      <option value="none">Select a snack</option>
+     <option value="Potato%2BChips">Potato Chips</option>
+     <option value="Cookie">Cookie</option>
+     <option value="Yogurt">Yogurt</option>
+     <option value="Carrots">Carrots</option>
+     <option value="Pretzels">Pretzels</option>
+   </select>
+
+
+</div>
+<%= submit_tag("Submit") %><br />
+<% end %>
+</div>
