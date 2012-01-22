@@ -2,6 +2,18 @@ class MealController < ApplicationController
   def login
   end
 
+  def logout
+    session[:huid] = nil
+    session[:password] = nil
+    session[:test_huid] = nil
+    session[:test_password] = nil
+
+    flash[:notice] = "You have successfully logged out! Thanks for using BagIt!"
+    redirect_to root_path
+
+  end
+
+
   def submit
     if request.post?
       session[:test_huid] = params[:test_huid]

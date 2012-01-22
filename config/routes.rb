@@ -11,6 +11,7 @@ BagIt::Application.routes.draw do
 
   #match 'meal' => 'meal#meals'
   match 'breakfast' => 'meal#breakfast'
+  match 'login' => 'meal#login'
   match 'meal/login' => 'meal#login'
   match 'meal/submit' => 'meal#submit'
   match 'meal/breakfast' => 'meal#breakfast'
@@ -22,6 +23,7 @@ BagIt::Application.routes.draw do
   match 'confirmlunch' => 'meal#confirmlunch'
   match 'meal/confirmlunch' => 'meal#confirmlunch'
   match 'meal/confirmdinner' => 'meal#confirmdinner'
+  match 'meal/logout' => 'meal#logout'
 
 
   # The priority is based upon order of creation:
